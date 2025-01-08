@@ -10,15 +10,15 @@ return {
           NormalFloat = { bg = "none" },
           FloatBorder = { bg = "none" },
           FloatTitle = { bg = "none" },
-      		TelescopePromptNormal = { link = "TelescopePreviewNormal" },
-      		TelescopePromptBorder = { link = "TelescopePreviewBorder" },
-      		TelescopeResultsNormal = { link = "TelescopePreviewNormal" },
-      		TelescopeResultsBorder = { link = "TelescopePreviewBorder" },
+          TelescopePromptNormal = { link = "TelescopePreviewNormal" },
+          TelescopePromptBorder = { link = "TelescopePreviewBorder" },
+          TelescopeResultsNormal = { link = "TelescopePreviewNormal" },
+          TelescopeResultsBorder = { link = "TelescopePreviewBorder" },
           WhichKeyNormal = { link = "Normal" },
           WhichKeyBorder = { link = "FloatBorder" },
         }
-      end
+      end,
     })
-    vim.cmd.colorscheme "kanagawa-paper"
-  end
+    vim.cmd.colorscheme("kanagawa-paper")
+  end,
 }

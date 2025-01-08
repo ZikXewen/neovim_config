@@ -1,19 +1,24 @@
 return {
   "williamboman/mason.nvim",
-  dependencies = {"williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig", "jay-babu/mason-null-ls.nvim", "nvimtools/none-ls.nvim"},
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    "jay-babu/mason-null-ls.nvim",
+    "nvimtools/none-ls.nvim",
+  },
   config = function()
     require("mason").setup()
     require("null-ls").setup()
-    require("mason-lspconfig").setup({ ensure_installed = { "lua_ls" } })
+    require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "clangd" } })
     require("mason-lspconfig").setup_handlers({
       function(server_name)
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
         require("lspconfig")[server_name].setup({ capabilities = capabilities })
-      end
+      end,
     })
     require("mason-null-ls").setup({
       ensure_installed = { "stylua" },
-      handlers = {}
+      handlers = {},
     })
     vim.keymap.set("n", "<Leader>pm", require("mason.ui").open, { desc = "Open Mason" })
     vim.keymap.set("n", "<Leader>ld", vim.lsp.buf.definition, { desc = "Go to definition" })
@@ -22,5 +27,5 @@ return {
     vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
     vim.keymap.set("n", "<Leader>li", "<Cmd>che lspconfig<CR>", { desc = "LSP information" })
     vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, { desc = "Format buffer" })
-  end
+  end,
 }

@@ -1,6 +1,6 @@
 return {
   "stevearc/oil.nvim",
-  dependencies = {"nvim-tree/nvim-web-devicons"},
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     local oil = require("oil")
     oil.setup({
@@ -11,22 +11,23 @@ return {
         ["<CR>"] = { "actions.select", mode = "n" },
         ["<BS>"] = { "actions.parent", mode = "n" },
         ["q"] = { "actions.close", mode = "n" },
-        ["p"] = { "actions.preview", mode = "n" },
+        ["P"] = { "actions.preview", mode = "n" },
         ["`"] = { "actions.cd", mode = "n" },
-        ["h"] = { "actions.toggle_hidden", mode = "n" },
+        ["H"] = { "actions.toggle_hidden", mode = "n" },
         ["gx"] = { "actions.open_external", mode = "n" },
         ["?"] = { "actions.show_help", mode = "n" },
+        ["_"] = { "actions.open_cwd", mode = "n" },
       },
       view_options = {
         show_hidden = true,
         is_always_hidden = function(name, _)
           return name == ".." or name == ".git"
-        end
+        end,
       },
       float = { win_options = { winblend = 10 } },
       confirmation = { win_options = { winblend = 10 } },
-      progress = { win_options = { winblend = 10 } }
+      progress = { win_options = { winblend = 10 } },
     })
     vim.keymap.set("n", "<BS>", oil.toggle_float, {})
-  end
+  end,
 }

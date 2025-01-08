@@ -3,8 +3,8 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = require("lualine.themes.kanagawa-paper")
-      }
+        theme = require("lualine.themes.kanagawa-paper"),
+      },
     })
-  end
+  end,
 }
