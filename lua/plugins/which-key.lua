@@ -8,12 +8,17 @@ return {
     show_keys = false,
     preset = "helix",
     spec = {
-      { "<leader>p", name = "Package Managers" },
-      { "<leader>f", name = "Find" },
-      { "<leader>l", name = "LSP" },
-      { "<leader>q", name = "Quit" },
-      { "<leader>qw", "<Cmd>wqa<CR>", name = "Save and quit" },
-      { "<leader>qq", "<Cmd>qa!<CR>", name = "Quit without save" },
+      { "<Leader>p", name = "Package Managers" },
+      { "<Leader>f", name = "Find" },
+      { "<Leader>l", name = "LSP" },
+      { "<Leader>q", name = "Quit" },
+      { "<Leader>qw", "<Cmd>wqa<CR>", name = "Save and quit" },
+      { "<Leader>qq", "<Cmd>qa!<CR>", name = "Quit without save" },
+      { "<Leader>t", name = "Terminal" },
+      { "<Leader>tv", "<C-w>v<Cmd>terminal<CR>i", name = "Start a terminal (Vertical)" },
+      { "<Esc>", "<C-\\><C-n>", mode = "t" },
+      { "<A-h>", "<C-\\><C-n><C-w>h", mode = "t" },
+      { "<A-h>", "<C-w>li" },
     }
   },
 }
