@@ -22,7 +22,10 @@ return {
         is_always_hidden = function(name, _)
           return name == ".." or name == ".git"
         end
-      }
+      },
+      float = { win_options = { winblend = 10 } },
+      confirmation = { win_options = { winblend = 10 } },
+      progress = { win_options = { winblend = 10 } }
     })
     vim.keymap.set("n", "<BS>", oil.toggle_float, {})
   end

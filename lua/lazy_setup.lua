@@ -16,6 +16,7 @@ end
 local lazy = require("lazy")
 lazy.setup({
   spec = { { import = "plugins" } },
+  ui = { backdrop = 100 },
   performance = {
     rtp = {
       disabled_plugins = {

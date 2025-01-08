@@ -14,7 +14,7 @@ return {
       lspconfig.lua_ls.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "<Leader>ld", vim.lsp.buf.definition, { desc = "Go to definition" })
-      vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.references, { desc = "Go to references" })
+      vim.keymap.set("n", "<Leader>lu", vim.lsp.buf.references, { desc = "Go to references" })
       vim.keymap.set("n", "<Leader>la", vim.lsp.buf.code_action, { desc = "Code actions" })
       vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
       vim.keymap.set("n", "<Leader>li", "<Cmd>che lspconfig<CR>", { desc = "LSP information" })
