@@ -10,6 +10,9 @@ return {
     local cmp = require("cmp")
     local lspkind = require("lspkind")
     cmp.setup({
+      snippet = {
+        expand = function(args) vim.snippet.expand(args.body) end
+      },
       mapping = {
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
