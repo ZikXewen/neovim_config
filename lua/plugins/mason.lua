@@ -9,11 +9,18 @@ return {
   config = function()
     require("mason").setup()
     require("null-ls").setup()
-    require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "clangd", "arduino-language-server" } })
+    require("mason-lspconfig").setup({
+      ensure_installed = { "lua_ls", "clangd", "arduino-language-server", "ruff" },
+    })
     require("mason-lspconfig").setup_handlers({
       function(server_name)
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
         require("lspconfig")[server_name].setup({ capabilities = capabilities })
+      end,
+      ["ruff"] = function()
+        require("lspconfig").ruff.setup({
+          init_options = { settings = { configuration = "~/.config/nvim/config/ruff.toml" } },
+        })
       end,
     })
     require("mason-null-ls").setup({
