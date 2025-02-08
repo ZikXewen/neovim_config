@@ -24,7 +24,7 @@ return {
       end,
     })
     require("mason-null-ls").setup({
-      ensure_installed = { "stylua", "prettierd" },
+      ensure_installed = { "stylua", "biome" },
       handlers = {},
     })
     vim.keymap.set("n", "<Leader>pm", require("mason.ui").open, { desc = "Open Mason" })
