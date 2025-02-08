@@ -21,7 +21,7 @@ return {
       view_options = {
         show_hidden = true,
         is_always_hidden = function(name, _)
-          return name == ".." or name == ".git"
+          return name == ".."
         end,
       },
       float = { win_options = { winblend = 10 } },
