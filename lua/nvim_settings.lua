@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- set tabsize
+vim.g.python_recommended_style = 0
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
