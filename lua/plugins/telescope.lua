@@ -21,8 +21,13 @@ return {
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<Leader>ff", builtin.find_files, { desc = "Find files" })
       vim.keymap.set("n", "<Leader>fh", builtin.help_tags, { desc = "Find help" })
-      -- stylua: ignore
-      vim.keymap.set("n", "<Leader>f/", builtin.current_buffer_fuzzy_find, { desc = "Find words in current buffer" })
+      vim.keymap.set("n", "<Leader>fs", builtin.lsp_document_symbols, { desc = "Find LSP Symbols" })
+      vim.keymap.set(
+        "n",
+        "<Leader>f/",
+        builtin.current_buffer_fuzzy_find,
+        { desc = "Find words in current buffer" }
+      )
       vim.keymap.set("n", "<Leader>fc", function()
         builtin.find_files({ cwd = vim.fn.stdpath("config"), follow = true })
       end, { desc = "Find config" })
