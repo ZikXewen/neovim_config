@@ -14,11 +14,10 @@ return {
           TelescopePromptBorder = { link = "TelescopePreviewBorder" },
           TelescopeResultsNormal = { link = "TelescopePreviewNormal" },
           TelescopeResultsBorder = { link = "TelescopePreviewBorder" },
-          WhichKeyNormal = { link = "Normal" },
           WhichKeyBorder = { link = "FloatBorder" },
         }
       end,
     })
-    vim.cmd.colorscheme("kanagawa-paper")
+    vim.cmd.colorscheme("kanagawa-paper-ink")
   end,
 }
