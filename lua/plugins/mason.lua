@@ -33,8 +33,9 @@ return {
     vim.keymap.set("n", "<Leader>ld", vim.lsp.buf.definition, { desc = "Go to definition" })
     vim.keymap.set("n", "<Leader>lu", vim.lsp.buf.references, { desc = "Go to references" })
     vim.keymap.set("n", "<Leader>la", vim.lsp.buf.code_action, { desc = "Code actions" })
+    vim.keymap.set("n", "<Leader>lh", vim.lsp.buf.hover, { desc = "Hover information" })
     vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
-    vim.keymap.set("n", "<Leader>lh", vim.diagnostic.open_float, { desc = "View diagnostic" })
+    vim.keymap.set("n", "<Leader>lv", vim.diagnostic.open_float, { desc = "View diagnostic" })
     vim.keymap.set("n", "<Leader>li", "<Cmd>che lspconfig<CR>", { desc = "LSP information" })
     vim.keymap.set("n", "<Leader>lf", vim.lsp.buf.format, { desc = "Format buffer" })
   end,
