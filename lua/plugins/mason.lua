@@ -1,5 +1,5 @@
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
@@ -7,23 +7,16 @@ return {
     "nvimtools/none-ls.nvim",
   },
   config = function()
+    vim.lsp.config("*", {
+      capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    })
+    vim.lsp.config("ruff", {
+      init_options = { settings = { configuration = "~/.config/nvim/config/ruff.toml" } },
+    })
     require("mason").setup()
     require("null-ls").setup()
     require("mason-lspconfig").setup({
       ensure_installed = { "lua_ls", "clangd", "arduino-language-server", "ruff", "biome" },
-    })
-    require("mason-lspconfig").setup_handlers({
-      function(server_name)
-        require("lspconfig")[server_name].setup({
-          capabilities = require("cmp_nvim_lsp").default_capabilities(),
-        })
-      end,
-      ["ruff"] = function()
-        require("lspconfig").ruff.setup({
-          capabilities = require("cmp_nvim_lsp").default_capabilities(),
-          init_options = { settings = { configuration = "~/.config/nvim/config/ruff.toml" } },
-        })
-      end,
     })
     require("mason-null-ls").setup({
       ensure_installed = { "stylua" },
