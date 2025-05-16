@@ -16,7 +16,7 @@ return {
     require("mason").setup()
     require("null-ls").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "clangd", "arduino-language-server", "ruff", "biome" },
+      ensure_installed = { "lua_ls", "clangd", "arduino-language-server", "ruff", "biome", "gopls" },
     })
     require("mason-null-ls").setup({
       ensure_installed = { "stylua" },
